@@ -1,0 +1,7 @@
+<div class="p-6 mt-5">
+  <app-name [name]="name" [surname]="surname" [profession]="profession"></app-name>
+  <app-profile [profileText1]="profileText1" [profileText2]="profileText2" [isCollapsed]="isProfileCollapsed" (toggle)="toggleSection('profile')"></app-profile>
+  <app-experience [experiences]="experiences" [isCollapsed]="isExperienceCollapsed" (toggle)="toggleSection('experience')"></app-experience>
+  <app-reference [references]="references" [isCollapsed]="isReferenceCollapsed" (toggle)="toggleSection('reference')"></app-reference>
+  <app-hobbies [hobbies]="hobbies" [isCollapsed]="isHobbiesCollapsed" (toggle)="toggleSection('hobbies')"></app-hobbies>
+</div>

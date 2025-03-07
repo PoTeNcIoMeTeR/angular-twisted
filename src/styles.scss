@@ -1,1 +1,174 @@
-/* You can add global styles to this file, and also import other style files */
+@mixin horizontal-line {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #f1c40f;
+  }
+}
+@mixin column-styling($padding-left, $padding-right, $background-color: null) {
+  min-height: 100vh; /* Or any minimum height you want */
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+
+  @if $background-color != null {
+    background-color: $background-color;
+  }
+}
+@mixin list-item-styling($color, $margin-bottom: 10px) {
+  margin-bottom: $margin-bottom;
+  color: $color;
+}
+@mixin skills-list-item {
+  font-weight: bold;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 25px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #f1c40f;
+  }
+}
+@mixin yellow-horizontal-line {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #f1c40f;
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@import 'bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+.text-yellow {
+  color: #f1c40f !important;
+}
+.bg-light{
+  background-color: #e8e8e8 !important;
+}
+@mixin yellow-horizontal-line {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #f1c40f;
+  }
+}
+
+@mixin collapsing-section {
+  max-height: 500px;
+  overflow: hidden;
+  transition-property: max-height, opacity;
+  transition-duration: 1s, 1s;
+  transition-timing-function: ease, ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin hidden-section {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: max-height, opacity;
+  transition-duration: 0.4s, 0.4s;
+  transition-timing-function: ease, ease;
+}
+
+h3, h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+}
+.black-text {
+  color: #2f2f2f !important;
+}
+.accented-text {
+  color: #4d4d4d;
+  font-weight: bold;
+}
+i {
+  color: #555;
+}
+:root {
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-roboto: 'Roboto', sans-serif; // Add Roboto
+  --font-size-h1: 96px;
+  --font-size-h3: 32px;   // Adjusted for better readability
+  --font-size-h5: 24px;   // Adjusted for better readability
+  --font-size-p-dark: 40px;
+  --font-size-body: 16px; // Standard body text size
+  --font-weight-normal: 400; // Regular font weight
+  --font-weight-bold: 700;   // Bold font weight
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-roboto); /* Apply Roboto as the default body font */
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+}
+h1 { //Specifically for h1 use Bebas Neue
+  font-family: var(--font-bebas);
+  font-size: var(--font-size-h1);
+}
+
+h3, h5 {
+  font-family: var(--font-bebas);
+  font-size: var(--font-size-h3);
+  font-weight: normal;
+}
+.black-text {
+  color: #2f2f2f !important;
+}
+.accented-text {
+  color: #4d4d4d;
+  font-weight: bold;
+}
+i {
+  color: #555;
+}
+p.text-dark {
+  font-family: var(--font-bebas);
+  font-size: var(--font-size-p-dark);
+}
+p, li, span{
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-body);
+}

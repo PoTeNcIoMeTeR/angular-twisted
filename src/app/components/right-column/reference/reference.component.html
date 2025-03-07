@@ -1,0 +1,27 @@
+<div class="mb-4">
+  <div class="reference">
+    <h5 class="text-yellow" (click)="toggle.emit()">REFERENCE</h5>
+    <div class="info_reference" [class.hidden]="isCollapsed">
+      <div class="reference-columns">
+        <ul class="list-unstyled reference-list">
+          <ng-container *ngFor="let ref of references; let i = index">
+            <li *ngIf="i < references.length / 2">
+              <span>{{ ref.role }}</span>
+              <span class="accented-text">{{ ref.name }}</span>
+              <span>{{ ref.company }}</span>
+            </li>
+          </ng-container>
+        </ul>
+        <ul class="list-unstyled reference-list">
+          <ng-container *ngFor="let ref of references; let i = index">
+            <li *ngIf="i >= references.length / 2">
+              <span>{{ ref.role }}</span>
+              <span class="accented-text">{{ ref.name }}</span>
+              <span>{{ ref.company }}</span>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

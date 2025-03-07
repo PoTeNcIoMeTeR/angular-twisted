@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  .img-fluid {
+    display: block;
+    margin: 25px auto;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 80px;
+    }
+  }
+}

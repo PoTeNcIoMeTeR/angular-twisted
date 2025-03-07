@@ -1,0 +1,13 @@
+@use '../../../../styles.scss' as *;
+h5{
+  @include yellow-horizontal-line;
+}
+.info_profile{
+  @include collapsing-section;
+}
+.hidden{
+  @include hidden-section;
+}
+p{
+  color: #555;
+}

@@ -1,0 +1,17 @@
+@use '../../../../styles.scss' as *;
+h5{
+  @include yellow-horizontal-line;
+}
+.info_experience{
+  @include collapsing-section;
+}
+.hidden{
+  @include hidden-section;
+}
+li {
+  color: #555;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}

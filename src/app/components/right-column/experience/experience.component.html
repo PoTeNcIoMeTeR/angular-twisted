@@ -1,0 +1,14 @@
+<div class="mb-4">
+  <div class="experience">
+    <h5 class="text-yellow" (click)="toggle.emit()">EXPERIENCE</h5>
+    <div class="info_experience" [class.hidden]="isCollapsed">
+      <ul class="list-unstyled">
+        <ng-container *ngFor="let exp of experiences">
+          <li class="highlight black-text">{{ exp.role }} - {{ exp.year }}</li>
+          <li class="highlight black-text">{{ exp.company }}</li>
+          <li>{{ exp.description }}</li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>

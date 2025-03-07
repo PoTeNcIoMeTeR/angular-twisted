@@ -1,0 +1,48 @@
+@use '../../../../styles.scss' as *;
+h5{
+  @include yellow-horizontal-line;
+}
+.info_reference{
+  @include collapsing-section;
+}
+.hidden{
+  @include hidden-section;
+}
+.reference-columns { //From old right-column
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  max-width: 600px;
+
+  &::before {
+    content: '';
+    width: 3px;
+    background-color: #f1c40f;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+  }
+
+  .reference-list {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    &:first-child{
+      margin-right: 18px;
+    }
+    &:last-child{
+      margin-left: 18px;
+    }
+    li {
+      margin-bottom: 15px;
+      span {
+        display: block;
+        line-height: 1.5;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use '../../../../styles.scss' as *;
+
+h5{
+  @include yellow-horizontal-line;
+}
+.info_hobbies{
+  @include collapsing-section;
+}
+.hidden{
+  @include hidden-section;
+}
+.hobbies-icons {
+  display: flex;
+
+  div {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    i {
+      font-size: 2rem;
+    }
+  }
+}

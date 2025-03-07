@@ -1,0 +1,16 @@
+@use '../../../../styles.scss' as *;
+h5{
+  @include yellow-horizontal-line;
+}
+.info_skills{
+  @include collapsing-section;
+}
+.hidden{
+  @include hidden-section;
+}
+.skills-list { //From old left-column
+  padding: 0;
+  li {
+    @include skills-list-item;
+  }
+}

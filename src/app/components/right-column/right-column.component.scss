@@ -1,0 +1,110 @@
+@import '../../../../src/styles.scss';
+/*
+h5{
+  @include yellow-horizontal-line;
+  cursor: pointer;
+}
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 96px;
+}
+p.text-dark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+}
+
+h3, h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+}
+
+p, li {
+  color: #555;
+}
+.text-yellow {
+  color: #f1c40f !important;
+}
+.black-text {
+  color: #2f2f2f !important;
+}
+.accented-text {
+  color: #4d4d4d;
+  font-weight: bold;
+}
+i {
+  color: #555;
+}
+.reference-columns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  max-width: 600px;
+
+  &::before {
+    content: '';
+    width: 3px;
+    background-color: #f1c40f;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+  }
+
+  .reference-list {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    &:first-child{
+      margin-right: 18px;
+    }
+    &:last-child{
+      margin-left: 18px;
+    }
+    li {
+      margin-bottom: 15px;
+      span {
+        display: block;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.hobbies-icons {
+  display: flex;
+
+  div {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    i {
+      font-size: 2rem;
+    }
+  }
+}
+
+.info_profile, .info_experience, .info_reference, .info_hobbies {
+  max-height: 500px;
+  overflow: hidden;
+  transition-property: max-height, opacity;
+  transition-duration: 1s, 1s;
+  transition-timing-function: ease, ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: max-height, opacity;
+  transition-duration: 0.4s, 0.4s;
+  transition-timing-function: ease, ease;
+}
+*/

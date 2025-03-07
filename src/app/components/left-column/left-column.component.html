@@ -1,0 +1,8 @@
+<!-- left-column.component.html -->
+<div class="p-5 text-center">
+  <app-profile-picture [imageUrl]="photoUrl"></app-profile-picture>
+
+  <app-contact [contacts]="contacts" [isCollapsed]="isContactCollapsed" (toggle)="toggleSection('contact')"></app-contact>
+  <app-education [education]="education" [isCollapsed]="isEducationCollapsed" (toggle)="toggleSection('education')"></app-education>
+  <app-skills [skills]="skills" [isCollapsed]="isSkillsCollapsed" (toggle)="toggleSection('skills')"></app-skills>
+</div>

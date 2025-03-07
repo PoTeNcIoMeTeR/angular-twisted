@@ -1,0 +1,15 @@
+@use '../../../../styles.scss' as *;
+h5{
+  @include yellow-horizontal-line;
+}
+
+.info_education{
+  @include collapsing-section;
+}
+.hidden{
+  @include hidden-section;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,10 @@
+<div class="mb-4 text-start">
+  <div class="skills">
+    <h5 class="text-yellow" (click)="toggle.emit()">SKILLS</h5>
+    <div class="info_skills" [class.hidden]="isCollapsed">
+      <ul class="list-unstyled skills-list">
+        <li *ngFor="let skill of skills">{{ skill }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

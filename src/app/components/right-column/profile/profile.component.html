@@ -1,0 +1,9 @@
+<div class="mb-4">
+  <div class="profile">
+    <h5 class="text-yellow" (click)="toggle.emit()">PROFILE</h5>
+    <div class="info_profile" [class.hidden]="isCollapsed">
+      <p>{{ profileText1 }}</p>
+      <p>{{ profileText2 }}</p>
+    </div>
+  </div>
+</div>

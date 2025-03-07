@@ -1,0 +1,25 @@
+@use '../../../../src/styles.scss' as *;
+
+:host {
+  background-color: #e1e1e1;
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 85px;
+    height: 25px;
+    background-color: #f1c40f;
+    left: 88px;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+  padding-left: 38px; //From old left-column
+  padding-right: 25px;//From old left-column
+}

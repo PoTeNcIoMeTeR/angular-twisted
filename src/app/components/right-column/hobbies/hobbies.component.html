@@ -1,0 +1,12 @@
+<div class="mb-4">
+  <div class="hobbies">
+    <h5 class="text-yellow" (click)="toggle.emit()">HOBBIES</h5>
+    <div class="info_hobbies" [class.hidden]="isCollapsed">
+      <div class="d-flex hobbies-icons">
+        <div *ngFor="let hobby of hobbies">
+          <i class="bi {{ hobby.icon }}" style="font-size: 2rem;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

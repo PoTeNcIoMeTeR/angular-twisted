@@ -1,0 +1,14 @@
+<div class="mb-4 text-start">
+  <div class="education">
+    <h5 class="text-yellow" (click)="toggle.emit()">EDUCATION</h5>
+    <div class="info_education" [class.hidden]="isCollapsed">
+      <ul class="list-unstyled">
+        <ng-container *ngFor="let item of education">
+          <li class="year">{{ item.year }}</li>
+          <li class="degree">{{ item.degree }}</li>
+          <li class="university">{{ item.university }}</li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>
