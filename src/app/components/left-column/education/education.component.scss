@@ -2,9 +2,48 @@
 h5{
   @include yellow-horizontal-line;
 }
-
-.info_education{
+li{
+ font-size: 18px;
+}
+.info_education {
   @include collapsing-section;
+  form {
+    .mb-3 { // Bootstrap class for margin-bottom
+      label {
+        display: block;
+        margin-bottom: 0.25rem; // Add some spacing below labels
+        font-weight: bold; // Make labels bold (optional)
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 100%; // Make input fields full-width
+        padding: 0.375rem 0.75rem; // Bootstrap padding
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057; // Bootstrap input text color
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da; // Bootstrap input border color
+        border-radius: 0.25rem; // Bootstrap input border radius
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &:focus {
+          color: #495057;
+          background-color: #fff;
+          border-color: #80bdff; // Bootstrap focus border color
+          outline: 0;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); // Bootstrap focus box-shadow
+        }
+      }
+    }
+    // Style for the submit button (using Bootstrap classes)
+    button[type="submit"] {
+      @extend .btn;
+      @extend .btn-warning;
+
+    }
+  }
 }
 .hidden{
   @include hidden-section;

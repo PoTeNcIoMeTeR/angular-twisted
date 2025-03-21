@@ -3,8 +3,16 @@
     <h5 class="text-yellow" (click)="toggle.emit()">SKILLS</h5>
     <div class="info_skills" [class.hidden]="isCollapsed">
       <ul class="list-unstyled skills-list">
-        <li *ngFor="let skill of skills">{{ skill }}</li>
+        <li *ngFor="let skill of skills">{{ skill.name }}</li>
       </ul>
+      <!-- Add Skill Form -->
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="newSkillName" class="form-label">Skill Name:</label>
+          <input type="text" class="form-control" id="newSkillName" name="newSkillName" [(ngModel)]="newSkill.name" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Skill</button>
+      </form>
     </div>
   </div>
 </div>

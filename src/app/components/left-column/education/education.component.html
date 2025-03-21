@@ -9,6 +9,22 @@
           <li class="university">{{ item.university }}</li>
         </ng-container>
       </ul>
+      <!-- Add Education Form -->
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="newEducationYear" class="form-label">Year:</label>
+          <input type="text" class="form-control" id="newEducationYear" name="newEducationYear" [(ngModel)]="newEducation.year" required>
+        </div>
+        <div class="mb-3">
+          <label for="newEducationDegree" class="form-label">Degree:</label>
+          <input type="text" class="form-control" id="newEducationDegree" name="newEducationDegree" [(ngModel)]="newEducation.degree" required>
+        </div>
+        <div class="mb-3">
+          <label for="newEducationUniversity" class="form-label">University:</label>
+          <input type="text" class="form-control" id="newEducationUniversity" name="newEducationUniversity" [(ngModel)]="newEducation.university" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Education</button>
+      </form>
     </div>
   </div>
 </div>

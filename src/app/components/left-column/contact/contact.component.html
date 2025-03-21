@@ -4,15 +4,17 @@
     <div class="info_contact" [class.hidden]="isCollapsed">
       <ul class="list-unstyled">
         <ng-container *ngFor="let contact of contacts">
-          <li class="list-item">{{ contact.type }}</li>
-          <li class="list-item-last" *ngIf="contact.subValue; else showValue">
-            {{ contact.subValue }}
-          </li>
-          <ng-template #showValue>
-            <li class="list-item-last">{{contact.value}}</li>
-          </ng-template>
+          <li class="list-item">{{ contact.title }}</li> <!-- Display title -->
         </ng-container>
       </ul>
+      <!-- Add Contact Form -->
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="newContactTitle" class="form-label">Title:</label> <!-- Change label -->
+          <input type="text" class="form-control" id="newContactTitle" name="newContactTitle" [(ngModel)]="newContact.title" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Contact</button>
+      </form>
     </div>
   </div>
 </div>
