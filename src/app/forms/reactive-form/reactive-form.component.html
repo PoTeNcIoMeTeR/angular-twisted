@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+
+    <h2>Login</h2> <!-- Заголовок форми логіну -->
+
+    <!-- Повідомлення про статус (успіх/помилка) -->
+    <div *ngIf="submissionStatus" [ngClass]="{'alert-success': submissionStatus.success, 'alert-danger': !submissionStatus.success}" class="alert">
+      {{ submissionStatus.message }}
+    </div>
+
+    <!-- Форма прив'язана до loginForm, викликає onSubmit при відправці -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- Поле Email -->
+      <div class="form-group mb-3">
+        <label for="loginEmail" class="form-label">Email:</label>
+        <input
+          type="email"
+          id="loginEmail"
+          class="form-control"
+          formControlName="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          [ngClass]="{'is-invalid': email?.invalid && (email?.dirty || email?.touched)}"
+        >
+        <!-- Блок для відображення помилок валідації email -->
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="invalid-feedback">
+          <div *ngIf="email?.errors?.['required']">Email is required.</div>
+          <div *ngIf="email?.errors?.['email']">Please enter a valid email address.</div>
+        </div>
+      </div>
+
+      <!-- Поле Password -->
+      <div class="form-group mb-3">
+        <label for="loginPassword" class="form-label">Password:</label>
+        <input
+          type="password"
+          id="loginPassword"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          [ngClass]="{'is-invalid': password?.invalid && (password?.dirty || password?.touched)}"
+        >
+        <!-- Блок для відображення помилок валідації пароля -->
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="invalid-feedback">
+          <div *ngIf="password?.errors?.['required']">Password is required.</div>
+          <!-- Сюди можна додати інші помилки, якщо є валідатори -->
+        </div>
+      </div>
+
+      <!-- Кнопка відправки форми логіну -->
+      <!-- Деактивується, якщо форма невалідна або йде завантаження -->
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid || isLoading">
+        {{ isLoading ? 'Logging in...' : 'Login' }} <!-- Текст кнопки -->
+      </button>
+
+      <!-- Посилання на сторінку реєстрації -->
+      <div class="mt-3">
+        Don't have an account? <a routerLink="/register-template">Register here</a>
+        <!-- Можна додати посилання і на інші форми реєстрації, якщо вони будуть -->
+      </div>
+
+    </form>
+
+  </div>
+</div>

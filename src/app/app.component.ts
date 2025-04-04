@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { LeftColumnComponent } from './components/left-column/left-column.component';
-import { RightColumnComponent } from './components/right-column/right-column.component';
 import { CommonModule } from '@angular/common';
+// Імпортуємо директиви роутера для використання в шаблоні
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LeftColumnComponent, RightColumnComponent, CommonModule],
+  // Тепер імпортуємо CommonModule та директиви роутера
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
+    // LeftColumnComponent, RightColumnComponent, TemplateFormComponent більше НЕ потрібні тут!
+  ],
   templateUrl: `./app.component.html`,
   styleUrls: ['./app.component.scss']
 })

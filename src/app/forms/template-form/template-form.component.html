@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+<h2>Template-Driven Registration Form</h2>
+
+<!-- Показуємо повідомлення про статус відправки -->
+<div *ngIf="submissionStatus" [ngClass]="{'alert-success': submissionStatus.success, 'alert-danger': !submissionStatus.success}" class="alert">
+  {{ submissionStatus.message }}
+</div>
+
+<!-- #registrationForm="ngForm" створює локальну змінну для доступу до екземпляру NgForm -->
+<form (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm" novalidate>
+
+  <!-- Поле Username -->
+  <div class="form-group mb-3">
+    <label for="username" class="form-label">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="form-control"
+      [(ngModel)]="username"
+      #usernameCtrl="ngModel"
+      required
+      minlength="3"
+      [ngClass]="{'is-invalid': usernameCtrl.invalid && (usernameCtrl.dirty || usernameCtrl.touched)}"
+    >
+    <!-- Повідомлення про помилки для username -->
+    <div *ngIf="usernameCtrl.invalid && (usernameCtrl.dirty || usernameCtrl.touched)" class="invalid-feedback">
+      <div *ngIf="usernameCtrl.errors?.['required']">Username is required.</div>
+      <div *ngIf="usernameCtrl.errors?.['minlength']">Username must be at least 3 characters long.</div>
+    </div>
+  </div>
+
+  <!-- Поле Email -->
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      [(ngModel)]="email"
+      #emailCtrl="ngModel"
+      required
+      email
+      [ngClass]="{'is-invalid': emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)}"
+    >
+    <!-- Повідомлення про помилки для email -->
+    <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)" class="invalid-feedback">
+      <div *ngIf="emailCtrl.errors?.['required']">Email is required.</div>
+      <div *ngIf="emailCtrl.errors?.['email']">Please enter a valid email address.</div>
+    </div>
+  </div>
+
+  <!-- Поле Password -->
+  <div class="form-group mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      [(ngModel)]="password"
+      #passwordCtrl="ngModel"
+      required
+      minlength="6"
+      [ngClass]="{'is-invalid': passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)}"
+    >
+    <!-- Повідомлення про помилки для password -->
+    <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)" class="invalid-feedback">
+      <div *ngIf="passwordCtrl.errors?.['required']">Password is required.</div>
+      <div *ngIf="passwordCtrl.errors?.['minlength']">Password must be at least 6 characters long.</div>
+    </div>
+  </div>
+
+  <!-- Кнопка Submit -->
+  <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid || isLoading">
+    {{ isLoading ? 'Registering...' : 'Register (Template)' }}
+  </button>
+
+</form>
+  </div>
+</div>

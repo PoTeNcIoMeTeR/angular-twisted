@@ -18,3 +18,16 @@
 .col-md-8{
   min-height: 100vh;
 }
+.container-fluid-navbar { // Звертаємось по новому класу
+  min-height: 10vh;
+}
+.navbar {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  min-height: auto;
+}
+
+
+nav.mb-4 {
+  margin-bottom: 1rem !important;
+}

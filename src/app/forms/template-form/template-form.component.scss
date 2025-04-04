@@ -1,0 +1,43 @@
+/* Базові стилі для .is-invalid та .invalid-feedback (якщо не використовується Bootstrap) */
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: none; /* Сховано за замовчуванням */
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
+/* Показуємо блок з помилкою, якщо контроль невалідний та "брудний" або "торкнутий" */
+.form-control.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+/* Стилі для повідомлень про статус відправки */
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+/* Стилі для кнопки, коли вона disabled */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
